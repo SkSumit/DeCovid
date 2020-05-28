@@ -16,6 +16,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
     />
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://www.amcharts.com/lib/4/geodata/indiaLow.js"></script>
   </head>
 
   <body>
@@ -70,7 +73,7 @@
         </h2>
 
         <div class="tile is-ancestor">
-          <div class="tile is-parent">
+          <div class="tile is-parent  is-4">
             <article class="tile is-child box has-text-centered">
               <p class="title is-4">Total Confirmed Cases</p>
               <p
@@ -78,7 +81,7 @@
               ></p>
             </article>
           </div>
-          <div class="tile is-parent">
+          <div class="tile is-parent  is-4">
             <article class="tile is-child box has-text-centered">
               <p class="title is-4">Total Death Cases</p>
               <p
@@ -86,7 +89,7 @@
               ></p>
             </article>
           </div>
-          <div class="tile is-parent">
+          <div class="tile is-parent  is-4">
             <article class="tile is-child box has-text-centered">
               <p class="title is-4">Total Recovered Cases</p>
               <p
@@ -96,7 +99,7 @@
           </div>
         </div>
         <div class="tile is-ancestor">
-          <div class="tile is-parent">
+          <div class="tile is-parent  is-4">
             <article class="tile is-child box has-text-centered">
               <p class="title is-4">New Confirmed Cases</p>
               <p
@@ -104,7 +107,7 @@
               ></p>
             </article>
           </div>
-          <div class="tile is-parent">
+          <div class="tile is-parent  is-4">
             <article class="tile is-child box has-text-centered">
               <p class="title is-4">New Death Cases</p>
               <p
@@ -112,7 +115,7 @@
               ></p>
             </article>
           </div>
-          <div class="tile is-parent">
+          <div class="tile is-parent  is-4">
             <article class="tile is-child box has-text-centered">
               <p class="title is-4">New Recovered Cases</p>
               <p
@@ -129,9 +132,10 @@
         <h1 class="title">World COVID-19 Stats</h1>
         <h2 class="subtitle">
           List of all the countries and their statistics
-          
         </h2>
-        <button class="button is-danger  is-rounded"><a href="#map" >Skip this section</a> </button><br>
+        <button class="button is-danger is-rounded">
+          <a href="#map">Skip this section</a></button
+        ><br />
 
         <div class="tile is-ancestor">
           <div class="tile is-parent" id="table_wrapper">
@@ -196,63 +200,67 @@
         </h2>
 
         <div class="tile is-ancestor">
-          <div class="tile is-parent">
+          <div class="tile is-parent  is-4">
             <article class="tile is-child box has-text-centered">
               <p class="title is-4">Total Confirmed Cases</p>
               <p
                 class="subtitle has-text-weight-medium has-text-warning is-3"
               ></p>
-              <div><canvas id="myChart"></canvas></div> 
+              <div><canvas class="myChart"></canvas></div>
             </article>
           </div>
-          <div class="tile is-parent">
+          <div class="tile is-parent  is-4">
             <article class="tile is-child box has-text-centered">
               <p class="title is-4">Total Death Cases</p>
               <p
                 class="subtitle has-text-danger has-text-weight-medium is-3"
               ></p>
+              <div><canvas class="myChart"></canvas></div>
             </article>
           </div>
-          <div class="tile is-parent">
+          <div class="tile is-parent  is-4">
             <article class="tile is-child box has-text-centered">
               <p class="title is-4">Total Recovered Cases</p>
               <p
                 class="subtitle has-text-success has-text-weight-medium is-3"
               ></p>
+              <div><canvas class="myChart"></canvas></div>
             </article>
           </div>
         </div>
         <div class="tile is-ancestor">
-          <div class="tile is-parent">
+          <div class="tile is-parent  is-4">
             <article class="tile is-child box has-text-centered">
               <p class="title is-4">New Confirmed Cases</p>
               <p
                 class="subtitle has-text-weight-medium is-3 has-text-warning"
               ></p>
+              <div><canvas class="myChart"></canvas></div>
             </article>
           </div>
-          <div class="tile is-parent">
+          <div class="tile is-parent  is-4">
             <article class="tile is-child box has-text-centered">
               <p class="title is-4">New Death Cases</p>
               <p
                 class="subtitle has-text-danger has-text-weight-medium is-3"
               ></p>
+              <div><canvas class="myChart"></canvas></div>
             </article>
           </div>
-          <div class="tile is-parent">
+          <div class="tile is-parent  is-4">
             <article class="tile is-child box has-text-centered">
               <p class="title is-4">New Recovered Cases</p>
               <p
                 class="subtitle has-text-success has-text-weight-medium is-3"
               ></p>
+              <div><canvas class="myChart"></canvas></div>
             </article>
           </div>
         </div>
       </div>
       <div class="container">
         <div class="columns">
-          <div class="column">
-
+          <div class="column ">
             <div class="tile is-ancestor">
               <div class="tile is-parent" id="table_wrapper">
                 <table
@@ -260,24 +268,20 @@
                 >
                   <thead>
                     <tr>
-                     
+                      <th><abbr>Name</abbr></th>
 
-                      
-                      <th ><abbr>Name</abbr></th>
-    
                       <th><abbr>Confirmed</abbr></th>
                       <th><abbr>Changes Today</abbr></th>
                       <th><abbr>Death</abbr></th>
                       <th><abbr>Changes Today</abbr></th>
                       <th><abbr>Recovered</abbr></th>
                       <th><abbr>Changes Today</abbr></th>
-                    
                     </tr>
                   </thead>
                   <tbody id="indiaStatsTable">
                     <tr>
                       <th></th>
-    
+
                       <td></td>
                       <td></td>
                       <td></td>
@@ -289,33 +293,28 @@
                 </table>
               </div>
             </div>
-            
-           
           </div>
-          <div class="column">
-            <canvas id="doughnut-chart" width="1000" height="450"></canvas>
-        
+          <div class="column  ">
+            <div class="flourish-embed flourish-map is-12 " data-src="visualisation/1538247">
+              <script
+                src="https://public.flourish.studio/resources/embed.js"
+                type="text/javascript"
+              ></script>
+              <div><canvas class="myChart is-12"></canvas></div>
+              <canvas style="margin-top: 20vh;margin-bottom: 20vh;" id="doughnut-chart"></canvas>
+              
+          
+              
+            </div>
           </div>
-       
         </div>
-
-        
-        <div class="chartwrapper">
-         
-         <canvas id="myChartTCC"></canvas> 
- 
-         <div class="chart-container">
-           <canvas id="chart"></canvas>
-       </div>
-       
-       </div>
-
       </div>
     </section>
+
+ 
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="index.js"></script>
   </body>
 </html>
-
 
