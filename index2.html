@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DeCovid</title>
+
+    <link rel="stylesheet" href="css/bulma.min.css" />
+    <link rel="stylesheet" href="index.css" />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://www.amcharts.com/lib/4/geodata/indiaLow.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar is-transparent">
+      <div class="navbar-brand">
+        <a class="navbar-item">
+          <img src="img/logo.jpg" width="48" height="64" />
+        </a>
+        <div
+          class="navbar-burger burger"
+          data-target="navbarExampleTransparentExample"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item">
+            Home
+          </a>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <a
+                  class="button is-rounded is-dark"
+                  href="https://github.com/jgthms/bulma/releases/download/0.8.2/bulma-0.8.2.zip"
+                >
+                  <span class="icon">
+                    <i class="fab fa-instagram"></i>
+                  </span>
+                  <span>Follow Me!</span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section" id="home">
+      <div class="container">
+        <h1 class="title">Stats Overview</h1>
+        <h2 class="subtitle">
+          Live overall <strong>WORLD</strong> statistics, updated
+          <strong>multiple times a day</strong>
+        </h2>
+
+        <div class="tile is-ancestor">
+          <div class="tile is-parent is-4">
+            <article class="tile is-child box has-text-centered">
+              <p class="title is-4">Total Confirmed Cases</p>
+              <p
+                class="subtitle has-text-weight-medium has-text-warning is-3"
+              ></p>
+            </article>
+          </div>
+          <div class="tile is-parent is-4">
+            <article class="tile is-child box has-text-centered">
+              <p class="title is-4">Total Death Cases</p>
+              <p
+                class="subtitle has-text-danger has-text-weight-medium is-3"
+              ></p>
+            </article>
+          </div>
+          <div class="tile is-parent is-4">
+            <article class="tile is-child box has-text-centered">
+              <p class="title is-4">Total Recovered Cases</p>
+              <p
+                class="subtitle has-text-success has-text-weight-medium is-3"
+              ></p>
+            </article>
+          </div>
+        </div>
+        <div class="tile is-ancestor">
+          <div class="tile is-parent is-4">
+            <article class="tile is-child box has-text-centered">
+              <p class="title is-4">New Confirmed Cases</p>
+              <p
+                class="subtitle has-text-weight-medium is-3 has-text-warning"
+              ></p>
+            </article>
+          </div>
+          <div class="tile is-parent is-4">
+            <article class="tile is-child box has-text-centered">
+              <p class="title is-4">New Death Cases</p>
+              <p
+                class="subtitle has-text-danger has-text-weight-medium is-3"
+              ></p>
+            </article>
+          </div>
+          <div class="tile is-parent is-4">
+            <article class="tile is-child box has-text-centered">
+              <p class="title is-4">New Recovered Cases</p>
+              <p
+                class="subtitle has-text-success has-text-weight-medium is-3"
+              ></p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section is-fullwidth">
+      <div class="container">
+        <h1 class="title">World COVID-19 Stats</h1>
+        <h2 class="subtitle">
+          List of all the countries and their statistics
+        </h2>
+        <button class="button is-danger is-rounded">
+          <a href="#map">Skip this section</a></button
+        ><br />
+
+        <div class="tile is-ancestor">
+          <div class="tile is-parent" >
+            <table
+              class="tile table is-fullwidth is-child box has-text-centered"
+            >
+              <thead>
+                <tr>
+                  <th><abbr>Name</abbr></th>
+
+                  <th><abbr>Confirmed</abbr></th>
+                  <th><abbr>Changes Today</abbr></th>
+                  <th><abbr>Death</abbr></th>
+                  <th><abbr>Changes Today</abbr></th>
+                  <th><abbr>Recovered</abbr></th>
+                  <th><abbr>Critical</abbr></th>
+                </tr>
+              </thead>
+              <tbody id="worldStatsTable">
+                <tr>
+                  <th></th>
+
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
+

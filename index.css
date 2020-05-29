@@ -3,15 +3,25 @@ html {
   margin: 0;
   padding: 0;
   overflow-x: auto;
-  background-color: #ffffff !important;
+  background-color: transparent !important;
 }
 
+.has-text-danger{
+  color: #ff073a !important;
+}
+.has-text-warning{
+  color: #007bff !important;
+}
+
+.has-text-success{
+  color: #28a745 !important;
+}
 .section .container h1,
 .section .container h2 {
   color: #000 !important;
 }
 .section .container h2 strong {
-  color: #e52623 !important;
+  color:  #ff073a  !important;
 }
 
 nav {
@@ -50,6 +60,7 @@ table tbody td {
 table {
   width: 100% !important;
   overflow-x: auto;
+
 }
 
 tbody tr:hover {
@@ -92,13 +103,7 @@ tr td:hover {
 
  
   
-  .chart-container {
-    position: relative;
-    margin: auto;
-    height: 80vh;
-    width: 80vw;
-  }
-  
+ 
   #india .tile.table {
     max-height: max-content !important;
   }
@@ -124,3 +129,17 @@ tr td:hover {
   width: 100%;
   padding-top: 4rem;
 }
+
+#table_wrapper{
+  padding-left: 0rem !important;
+  padding-right: 0rem !important;
+  overflow-x: auto;
+}
+#india .is-vertical.is-parent {
+  max-height: max-content !important;
+}
+
+#indiatable table {
+  max-height: max-content !important;
+}
+
