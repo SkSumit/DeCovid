@@ -531,5 +531,8 @@ var pie = new Chart(document.getElementById("doughnut-chart"), {
       text: "The division of total number of cases",
     },
     responsive: true,
+    legend: {
+      display: false
+    },
   },
 });
