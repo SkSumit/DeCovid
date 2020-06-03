@@ -158,27 +158,33 @@ fetch("https://api.covid19india.org/data.json").then((response) => {
     });
 
     states.forEach((state, index) => {
-      stateName.push(state.state);
-      stateActiveList.push(state.active);
-      stateConfirmedList.push(state.confirmed);
-      stateDeathsList.push(state.deaths);
-      stateRecoveredList.push(state.recovered);
+
       if(index==0){
         pievalC.push(state.confirmed)
         pievalD.push(state.deaths)
         pievalR.push(state.recovered)
         
       }
-     
 
-      const row = table[1].insertRow(index + 1);
-      row.innerHTML = `<th onclick="javascript:location.href='/${stateName[index]}'" >${state.state}</th> 
-      <td>${state.confirmed}</td>
-      <td>${state.deltaconfirmed}</td>
-      <td>${state.deaths}</td>
-      <td>${state.deltadeaths}</td>
-      <td>${state.recovered}</td>
-       <td>${state.deltarecovered}</td>`;
+      stateName.push(state.state);
+      stateActiveList.push(state.active);
+      stateConfirmedList.push(state.confirmed);
+      stateDeathsList.push(state.deaths);
+      stateRecoveredList.push(state.recovered);
+
+      if(index>0){
+        const row = table[1].insertRow(index + 1);
+        row.innerHTML = `<th onclick="javascript:location.href='/template.html?state=${state.state}'" >${state.state}</th> 
+        <td>${state.confirmed}</td>
+        <td>${state.deltaconfirmed}</td>
+        <td>${state.deaths}</td>
+        <td>${state.deltadeaths}</td>
+        <td>${state.recovered}</td>
+         <td>${state.deltarecovered}</td>`;
+
+      }
+    
+     
     });
 
     stateName.shift();
@@ -536,3 +542,65 @@ var pie = new Chart(document.getElementById("doughnut-chart"), {
     },
   },
 });
+
+
+function myFunction() {
+  // Declare variables
+  var input, filter, tableSearch, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+
+ var input1 = document.getElementById("myInput1");
+  filter1 = input1.value.toUpperCase();
+
+  // table = document.getElementById("districtStatsTable");
+  tableSearch =  document.querySelector('#worldStatsTable')
+  var tableSearchIndia = document.querySelector('#indiaStatsTable')
+  
+  tr = tableSearch.getElementsByTagName("tr");
+ var trIndia = tableSearchIndia.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("th")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+
+  for (i = 1; i < trIndia.length; i++) {
+    var td1 = trIndia[i].getElementsByTagName("th")[0];
+    if (td1) {
+      var txtValue1 = td1.textContent || td1.innerText;
+      if (txtValue1.toUpperCase().indexOf(filter1) > -1) {
+        trIndia[i].style.display = "";
+      } else {
+        trIndia[i].style.display = "none";
+      }
+    }
+  }
+}
+
+
+
+const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent ;
+
+const comparer = (idx, asc) => (a, b) => ((v1, v2) => 
+    v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
+    )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+
+// do the work...
+document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
+
+  const table = th.closest('table');
+ 
+  const tbody = table.querySelector('tbody');
+  Array.from(tbody.querySelectorAll('tr'))
+    .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+    .forEach(tr => tbody.appendChild(tr) );
+})));

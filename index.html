@@ -19,7 +19,7 @@
 <body>
   <nav class="navbar is-transparent">
     <div class="navbar-brand">
-      <a class="navbar-item">
+      <a class="navbar-item" href="/">
         <img src="img/logo.jpg" width="48" height="64" />
       </a>
       <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
@@ -31,8 +31,14 @@
 
     <div id="navbarExampleTransparentExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">
-          Home
+        <a href="#india" class="navbar-item">
+          India
+        </a>
+        <a  href="#india" class="navbar-item">
+          About Covid-19
+        </a>
+        <a href="#india1" class="navbar-item">
+          About Me
         </a>
       </div>
 
@@ -117,33 +123,39 @@
       <h2 class="subtitle">
         List of all the countries and their statistics
       </h2>
-
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <div class=" tile  box has-text-centered" style="padding-bottom: 0vh !important; padding-top: 0vh !important;" >
+            <input class="input is-rounded" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Country Name">
+          </div>
+        </div>
+      </div>
 
       <div class="tile is-ancestor">
         <div class="tile is-parent">
-          <table class="tile table is-fullwidth is-child box has-text-centered">
-            <thead>
+          <table id="worldStatsTable" class="tile table is-fullwidth is-child box has-text-centered">
+            <thead id="thead">
               <tr>
-                <th><abbr>Name</abbr></th>
+                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Name</abbr></th>
 
-                <th><abbr>Confirmed</abbr></th>
-                <th><abbr>Changes Today</abbr></th>
-                <th><abbr>Death</abbr></th>
-                <th><abbr>Changes Today</abbr></th>
-                <th><abbr>Recovered</abbr></th>
-                <th><abbr>Critical</abbr></th>
+                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Confirmed</abbr></th>
+                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Changes Today</abbr></th>
+                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Death</abbr></th>
+                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Changes Today</abbr></th>
+                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Recovered</abbr></th>
+                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Critical</abbr></th>
               </tr>
             </thead>
-            <tbody id="worldStatsTable">
+            <tbody >
               <tr>
-                <th></th>
+                <th hidden></th>
 
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td hidden></td>
+                <td hidden></td>
+                <td hidden></td>
+                <td hidden></td>
+                <td hidden></td>
+                <td hidden></td>
               </tr>
             </tbody>
           </table>
@@ -226,29 +238,7 @@
 
 
 
-    <!-- <div class="tile is-vertical is-parent">
-             
-              <div class="tile is-child box" style="flex-grow: 1;">
-                
-                <div class="flourish-embed flourish-map is-12 "  style="margin-top: 1vh;" data-src="visualisation/1538247">
-                    <script
-                      src="https://public.flourish.studio/resources/embed.js"
-                      type="text/javascript"
-                    ></script>
-                    </div>
-              </div>
-              <div class="tile is-child box" style="flex-grow: 1;margin-top: 50vh !important">
-                
-                <div><canvas class="myChart"></canvas></div>
-              </div>
-              <div class="tile is-child box" style="flex-grow: 1;">
-                <div >
-                  <canvas   id="doughnut-chart"></canvas> 
-                </div>
-                
-                
-              </div>
-            </div> -->
+
 
     </div>
 
@@ -262,35 +252,42 @@
     <div class="container">
 
       <h2 class="subtitle">
-        List of all the countries and their statistics
+        List of all the States and their statistics
       </h2>
-
+      
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <div class=" tile  box has-text-centered" style="padding-bottom: 0vh !important; padding-top: 0vh !important;" >
+            <input class="input is-rounded" type="text" id="myInput1" onkeyup="myFunction()" placeholder="Search for State Name">
+          </div>
+        </div>
+      </div>
 
       <div class="tile is-ancestor">
         <div class="tile is-parent">
-          <table class="tile table is-fullwidth is-child box has-text-centered">
+          <table id="indiaStatsTable" class="tile table is-fullwidth is-child box has-text-centered">
             <thead>
               <tr>
-                <th><abbr>Name</abbr></th>
+                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Name</abbr></th>
 
-                <th><abbr>Confirmed</abbr></th>
-                <th><abbr>Changes Today</abbr></th>
-                <th><abbr>Death</abbr></th>
-                <th><abbr>Changes Today</abbr></th>
-                <th><abbr>Recovered</abbr></th>
-                <th><abbr>Critical</abbr></th>
+                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Confirmed</abbr></th>
+                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Changes Today</abbr></th>
+                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Death</abbr></th>
+                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Changes Today</abbr></th>
+                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Recovered</abbr></th>
+                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Critical</abbr></th>
               </tr>
             </thead>
-            <tbody id="indiaStatsTable">
+            <tbody >
               <tr>
-                <th></th>
+                <th hidden></th>
 
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td hidden></td>
+                <td hidden></td>
+                <td hidden></td>
+                <td hidden></td>
+                <td hidden></td>
+                <td hidden></td>
               </tr>
             </tbody>
           </table>
