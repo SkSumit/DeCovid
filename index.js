@@ -174,7 +174,7 @@ fetch("https://api.covid19india.org/data.json").then((response) => {
 
       if(index>0){
         const row = table[1].insertRow(index + 1);
-        row.innerHTML = `<th onclick="javascript:location.href='/template.html?state=${state.state}'" >${state.state}</th> 
+        row.innerHTML = `<th onclick="javascript:location.href='template.html?state=${state.state}'" >${state.state}</th> 
         <td>${state.confirmed}</td>
         <td>${state.deltaconfirmed}</td>
         <td>${state.deaths}</td>
