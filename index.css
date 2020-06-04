@@ -6,14 +6,14 @@ html {
   background-color: transparent !important;
 }
 
-.has-text-danger{
+.has-text-danger {
   color: #ff073a !important;
 }
-.has-text-warning{
+.has-text-warning {
   color: #007bff !important;
 }
 
-.has-text-success{
+.has-text-success {
   color: #28a745 !important;
 }
 .section .container h1,
@@ -21,7 +21,7 @@ html {
   color: #000 !important;
 }
 .section .container h2 strong {
-  color:  #ff073a  !important;
+  color: #ff073a !important;
 }
 
 nav {
@@ -33,12 +33,12 @@ nav a {
   color: #000 !important;
 }
 
-nav a:hover {
+/* nav a:hover {
   color: #ff073a !important;
-}
+} */
 
-.navbar-end a{
-   color: white !important
+.navbar-end a {
+  color: white !important
 ;
 }
 article:hover {
@@ -64,7 +64,6 @@ table tbody td {
 table {
   width: 100% !important;
   overflow-x: auto;
-
 }
 
 tbody tr:hover {
@@ -91,28 +90,22 @@ tr td:hover {
   padding: 0rem !important;
 }
 
-.button.is-danger.is-rounded a{
+.button.is-danger.is-rounded a {
   text-decoration: none;
   color: white !important;
- 
- 
 }
 
+#india .tile.table {
+  max-height: max-content !important;
+}
 
- 
-  
- 
-  #india .tile.table {
-    max-height: max-content !important;
-  }
-
-.flourish-map{
+.flourish-map {
   height: 50vh;
   width: 100%;
   padding-top: 4rem;
 }
 
-#table_wrapper{
+#table_wrapper {
   padding-left: 0rem !important;
   padding-right: 0rem !important;
   overflow-x: auto;
@@ -121,11 +114,7 @@ tr td:hover {
   max-height: max-content !important;
 }
 
-/* #indiatable table {
-  max-height: max-content !important;
-} */
-
-thead th{
+thead th {
   position: sticky !important;
   position: -webkit-sticky !important;
   top: 0 !important;
@@ -136,4 +125,13 @@ thead th{
 
 table.tile.table.is-fullwidth.is-child.box.has-text-centered {
   padding-top: 0px !important;
+}
+
+footer.footer strong {
+  color: white;
+}
+
+footer.footer {
+  background-color: black;
+  color: white;
 }

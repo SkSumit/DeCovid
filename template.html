@@ -1,195 +1,190 @@
 <!DOCTYPE html>
-<html>
+<html class="has-navbar-fixed-top">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DeCovid</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DeCovid</title>
 
-  <link rel="stylesheet" href="css/bulma.min.css" />
-  <link rel="stylesheet" href="index.css" />
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+    <link rel="stylesheet" href="css/bulma.min.css" />
+    <link rel="stylesheet" href="index.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
-  <script src="https://www.amcharts.com/lib/4/core.js"></script>
-  <script src="https://www.amcharts.com/lib/4/maps.js"></script>
-  <script src="https://www.amcharts.com/lib/4/geodata/indiaLow.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://www.amcharts.com/lib/4/geodata/indiaLow.js"></script>
 </head>
 
 <body>
-  <nav class="navbar is-transparent">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="index.html">
-        <img src="img/logo.jpg" width="48" height="64" />
-      </a>
-      <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
+    <nav class="navbar is-fixed-top is-transparent">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <img src="img/logo.jpg" width="48" height="64" />
+            </a>
+            <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
 
-    <div id="navbarExampleTransparentExample" class="navbar-menu">
-      <div class="navbar-start">
-        <a  href="#india" class="navbar-item">
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a href="index.html#home" class="navbar-item">
+         World
+        </a>
+                <a href="index.html#covid" class="navbar-item">
           About Covid-19
         </a>
-        <a  href="#india" class="navbar-item">
-          About Me
-        </a>
-      </div>
 
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="field is-grouped">
-            <p class="control">
-              <a class="button is-rounded is-dark"
-                href="https://github.com/jgthms/bulma/releases/download/0.8.2/bulma-0.8.2.zip">
-                <span class="icon">
-                  <i class="fab fa-instagram"></i>
-                </span>
-                <span>Follow Me!</span>
-              </a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="field is-grouped">
+                        <p class="control">
+                            <a class="button is-rounded is-dark" href="about.html">
+
+                                <span>About Project</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section is-fullwidth" id="india">
+        <div class="container">
+            <h1 class="title" id='templateTitle'></h1>
+            <h2 class="subtitle">
+                Indepth statistics of <strong id='templateSubtitle'>INDIA</strong> and it's districts, updated
+                <strong>multiple times a day</strong>
+            </h2>
+
+            <div class="tile is-ancestor">
+                <div class="tile is-parent is-4">
+                    <article class="tile is-child box has-text-centered">
+                        <p class="title is-4">Total Confirmed Cases</p>
+                        <p class="subtitle has-text-weight-medium has-text-warning is-3"></p>
+                        <div><canvas class="myChart"></canvas></div>
+                    </article>
+                </div>
+                <div class="tile is-parent is-4">
+                    <article class="tile is-child box has-text-centered">
+                        <p class="title is-4">Total Death Cases</p>
+                        <p class="subtitle has-text-danger has-text-weight-medium is-3"></p>
+                        <div><canvas class="myChart"></canvas></div>
+                    </article>
+                </div>
+                <div class="tile is-parent is-4">
+                    <article class="tile is-child box has-text-centered">
+                        <p class="title is-4">Total Recovered Cases</p>
+                        <p class="subtitle has-text-success has-text-weight-medium is-3"></p>
+                        <div><canvas class="myChart"></canvas></div>
+                    </article>
+                </div>
+            </div>
+
+        </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="section is-fullwidth" id="indiatable" style="margin-bottom: 10vh;">
+        <div class="container">
+            <h2 class="subtitle">
+                List of all the districts and their statistics
+
+            </h2>
+            <div class="tile is-ancestor">
+                <div class="tile is-parent">
+                    <div class=" tile  box has-text-centered" style="padding-bottom: 0vh !important; padding-top: 0vh !important;">
+                        <input class="input is-rounded" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for District Name">
+                    </div>
+                </div>
+            </div>
+            <div class="tile is-ancestor">
+                <div class="tile is-parent">
+
+                    <table class="tile table is-fullwidth is-child box has-text-centered " id="districtStatsTable" style="max-height: max-content !important;">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    <a style="margin-right: 0.5vh;" class="fas fa-sort"></a>Name </th>
+
+                                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Confirmed</abbr></th>
+                                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Changes Today</abbr></th>
+                                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Death</abbr></th>
+                                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Changes Today</abbr></th>
+                                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Recovered</abbr></th>
+                                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Zone</abbr></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th hidden></th>
+
+                                <td hidden></td>
+                                <td hidden></td>
+                                <td hidden></td>
+                                <td hidden></td>
+                                <td hidden></td>
+                                <td hidden></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                Created by <strong>Sumit Kolpekwar</strong>
+                <p class="control has-text-centered">
+                    <a target="_" href="https://www.instagram.com/sumitkolpekwar">
+                        <button class="button is-rounded " style="width: 125px;">
+              <span class="icon">
+                <i class="fab fa-instagram"></i>
+              </span>
+              <span>Instagram</span>
+            </button>
+                    </a>
+                </p>
+                <p class="control has-text-centered">
+                    <a target="_" href="https://github.com/SkSumit">
+                        <button class="button is-rounded" style="width: 125px;">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>GitHub</span>
+            </button>
+                    </a>
+                </p>
+                <p class="control has-text-centered">
+                    <a target="_" href="https://www.linkedin.com/in/sumitkolpekwar">
+                        <button class="button is-rounded" style="width: 125px;">
+              <span class="icon">
+                <i class="fab fa-linkedin"></i>
+              </span>
+              <span>LinkedIn</span>
+            </button>
+                    </a>
+                </p>
             </p>
-          </div>
         </div>
-      </div>
-    </div>
-  </nav>
+    </footer>
 
-  <section class="section is-fullwidth" id="india">
-    <div class="container">
-      <h1 class="title" id='templateTitle'></h1>
-      <h2 class="subtitle">
-        Indepth statistics of <strong id='templateSubtitle'>INDIA</strong> and it's districts, updated
-        <strong>multiple times a day</strong>
-      </h2>
-
-      <div class="tile is-ancestor">
-        <div class="tile is-parent is-4">
-          <article class="tile is-child box has-text-centered">
-            <p class="title is-4">Total Confirmed Cases</p>
-            <p class="subtitle has-text-weight-medium has-text-warning is-3"></p>
-            <div><canvas class="myChart"></canvas></div>
-          </article>
-        </div>
-        <div class="tile is-parent is-4">
-          <article class="tile is-child box has-text-centered">
-            <p class="title is-4">Total Death Cases</p>
-            <p class="subtitle has-text-danger has-text-weight-medium is-3"></p>
-            <div><canvas class="myChart"></canvas></div>
-          </article>
-        </div>
-        <div class="tile is-parent is-4">
-          <article class="tile is-child box has-text-centered">
-            <p class="title is-4">Total Recovered Cases</p>
-            <p class="subtitle has-text-success has-text-weight-medium is-3"></p>
-            <div><canvas class="myChart"></canvas></div>
-          </article>
-        </div>
-      </div>
-
-    </div>
-
-
-
-    
-    </div>
-
-
-
-
-    </div>
-  </section>
-
-  <section class="section is-fullwidth" id="indiatable">
-    <div class="container">
-
-      <h2 class="subtitle">
-        List of all the districts and their statistics
-        
-      </h2>
-     
-     
-      
-      <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <div class=" tile  box has-text-centered" style="padding-bottom: 0vh !important; padding-top: 0vh !important;" >
-            <input class="input is-rounded" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for District Name">
-          </div>
-        </div>
-      </div>
-
-      <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          
-          <table class="tile table is-fullwidth is-child box has-text-centered " id="districtStatsTable">
-            
-            <thead>
-              
-              <tr>
-               
-                <th > <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Name </th>
-
-                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Confirmed</abbr></th>
-                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Changes Today</abbr></th>
-                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Death</abbr></th>
-                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Changes Today</abbr></th>
-                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Recovered</abbr></th>
-                <th><abbr> <a style="margin-right: 0.5vh;" class="fas fa-sort" ></a>Zone</abbr></th>
-                
-              </tr>
-            </thead>
-            <tbody >
-              <tr>
-                <th hidden></th>
-
-                <td hidden></td>
-                <td hidden></td>
-                <td hidden></td>
-                <td hidden></td>
-                <td hidden></td>
-                <td hidden></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="tile is-ancestor">
-        <div class="tile is-parent is-6">
-          <article class="tile is-child box has-text-centered">
-            <p class="title is-4">Line chart showing division of cases per state</p>
-
-            <div><canvas class="myChart"></canvas></div>
-          </article>
-        </div>
-        <div class="tile is-parent is-6">
-          <article class="tile is-child box has-text-centered">
-            <p class="title is-4">Pie chart showing total division of cases</p>
-            <p class="subtitle has-text-danger has-text-weight-medium is-3"></p>
-            <canvas id="doughnut-chart"></canvas>
-          </article>
-        </div>
-
-      </div>
-
-
-
-
-
-    </div>
-  </section>
-
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-  <script src="template.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="template.js"></script>
 </body>
 
 </html>
-
